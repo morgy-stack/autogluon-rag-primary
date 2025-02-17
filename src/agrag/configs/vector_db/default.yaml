@@ -1,0 +1,30 @@
+DB_TYPE: faiss
+GPU: false
+SIMILARITY_THRESHOLD: 0.95
+USE_EXISTING_INDEX: false
+INDEX_PATH: vectorDB_index_save/
+SIMILARITY_FN: cosine
+METADATA_PATH: vectorDB_metadata_save/
+SAVE_INDEX: false
+FAISS_INDEX_TYPE: IndexFlatL2
+FAISS_INDEX_PARAMS:
+  quantizer: IndexFlatL2
+  m: 4
+  nbits: 4
+  nlist: 3
+FAISS_SEARCH_PARAMS:
+  nprobe: 5
+MILVUS_DB_NAME: rag_milvus_db.db
+MILVUS_DB_NAME: milvus/rag_milvus_db.db
+MILVUS_DB_COLLECTION_NAME: AutoGluonRAG_Milvus_DB_Collection
+MILVUS_INDEX_PARAMS:
+  metric_type: L2
+  index_type: IVF_FLAT
+  params: 
+    nlist: 256
+MILVUS_SEARCH_PARAMS:
+  metric_type: L2
+  params:
+    nprobe: 10
+MILVUS_CREATE_PARAMS: 
+  metric_type: L2
